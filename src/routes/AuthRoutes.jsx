@@ -1,9 +1,11 @@
-import Admin from "~/pages/Admin/Admin";
+import AuthLayout from "~/layouts/AuthLayout";
+import Login from "~/pages/Auth/Login/Login";
 
 const AdminRoutes = () => {
   return {
-    path: "/admin",
-    element: <Admin />,
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [{ path: "login", element: <Login /> }],
   };
 };
 

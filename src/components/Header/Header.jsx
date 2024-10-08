@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import { navTabs, socialMedia } from "~/data/data";
 import blur from "~/assets/blur/blur.svg";
+import { useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "~/firebase/firebase";
 
 const Header = () => {
+  const { user } = useSelector((store) => store.user);
+
+  const exit = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("user");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="w-full h-[300px] flex justify-start items-start p-12 border-b border-zinc-500 relative">
       <img src={blur} className="absolute top-0 -z-10 " />
@@ -31,6 +46,22 @@ const Header = () => {
                   {tab.label}
                 </Link>
               ))}
+              {user && (
+                <div className="flex gap-x-5">
+                  <Link
+                    to="/admin"
+                    className="text-xl font-semibold text-zinc-400 hover:text-white transition-colors duration-500"
+                  >
+                    Admin
+                  </Link>
+                  <button
+                    onClick={exit}
+                    className="text-xl font-semibold text-zinc-400 hover:text-white transition-colors duration-500"
+                  >
+                    Çıkış Yap
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           <div className="w-full flex gap-x-4">
