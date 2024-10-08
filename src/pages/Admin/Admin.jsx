@@ -1,22 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AdminNavbar from "~/components/Admin/AdminNavbar";
 import { adminTable } from "~/data/data";
 import { getAllProjects } from "~/redux/slices/projectsSlice";
 import { TiDeleteOutline } from "react-icons/ti";
 import { BiEdit } from "react-icons/bi";
+import EditModal from "~/components/UI/Modals/EditModal";
+import { Toaster } from "react-hot-toast";
+import AddModal from "~/components/UI/Modals/AddModal";
 
 const Admin = () => {
   const dispatch = useDispatch();
   const { projects } = useSelector((store) => store.projects);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const [isAddModalOpen, setIsAddModal] = useState(false);
 
   useEffect(() => {
     dispatch(getAllProjects());
   }, [dispatch]);
 
+  const onEdit = (project) => {
+    setIsModalOpen(true);
+    setSelectedProject(project);
+  };
+
   return (
     <div>
-      <AdminNavbar />
+      <Toaster />
+      {isModalOpen && (
+        <EditModal
+          setIsModalOpen={setIsModalOpen}
+          selectedProject={selectedProject}
+        />
+      )}
+      {isAddModalOpen && <AddModal setIsAddModal={setIsAddModal} />}
+      <AdminNavbar setIsAddModal={setIsAddModal} />
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -51,10 +71,7 @@ const Admin = () => {
                   <td className="px-6 py-4">{project.technology}</td>
                   <td className="px-6 py-4">{project.styleTech}</td>
                   <td className="px-6 py-4 flex gap-x-3">
-                    <button className="text-xl">
-                      <TiDeleteOutline />
-                    </button>
-                    <button className="text-xl">
+                    <button onClick={() => onEdit(project)} className="text-xl">
                       <BiEdit />
                     </button>
                   </td>
@@ -66,7 +83,7 @@ const Admin = () => {
                   colSpan={adminTable.length}
                   className="px-6 py-4 text-center"
                 >
-                  No projects available
+                  Proje mevcut değil
                 </td>
               </tr>
             )}

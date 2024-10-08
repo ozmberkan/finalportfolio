@@ -22,8 +22,6 @@ const Projects = () => {
     );
   }
 
-  console.log(projects);
-
   return (
     <div className="w-full flex-grow p-12 grid grid-cols-3 gap-5">
       {projects.map((project) => (
