@@ -5,6 +5,7 @@ const Project = ({ project }) => {
     title,
     version,
     technology,
+    description,
     styleTech,
     responsive,
     link,
@@ -59,6 +60,7 @@ const Project = ({ project }) => {
           </span>
         )}
       </div>
+      <div className="w-full text-sm">{description}</div>
     </div>
   );
 };
