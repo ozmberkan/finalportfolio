@@ -23,7 +23,7 @@ const Projects = () => {
   }
 
   return (
-    <div className="w-full flex-grow p-12 grid grid-cols-3 gap-5">
+    <div className="w-full flex-grow p-12 grid sm:grid-cols-3 grid-cols-1 gap-5">
       {projects.map((project) => (
         <Project key={project.id} project={project} />
       ))}

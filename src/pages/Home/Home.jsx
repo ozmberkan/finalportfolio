@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className=" w-full flex flex-grow flex-col gap-y-12 p-12">
-      <div className="flex flex-col gap-y-5">
-        <div className="w-full h-20 flex justify-between items-center  ">
-          <h1 className="text-2xl font-semibold">
+      <div className="flex flex-col gap-y-5 w-full ">
+        <div className="w-full sm:h-20 flex sm:justify-between items-center sm:flex-row flex-col gap-y-2  ">
+          <h1 className="sm:text-2xl text-sm   font-semibold text-center">
             Sık kullandığım teknolojiler.
           </h1>
           <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,bootstrap,tailwind,nextjs,redux" />
         </div>
-        <div className="w-full  h-20 flex justify-between items-center ">
-          <h1 className="text-2xl font-semibold">
+        <div className="w-full sm:h-20 flex sm:justify-between items-center sm:flex-row flex-col gap-y-2  ">
+          <h1 className="sm:text-2xl text-sm font-semibold text-center">
             Backend tarafında kullandığım teknolojiler.
           </h1>
           <img src="https://skillicons.dev/icons?i=nodejs,express,firebase,mongodb,postman" />

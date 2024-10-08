@@ -19,24 +19,23 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full h-[300px] flex justify-start items-start p-12 border-b border-zinc-500 relative">
-      <img src={blur} className="absolute top-0 -z-10 " />
-
-      <div className="flex gap-x-5 w-full">
+    <div className="w-full sm:h-[300px] flex  justify-start items-start p-12 border-b border-zinc-500 relative">
+      <img src={blur} className="absolute top-0 -z-10  " />
+      <div className="flex gap-x-5 w-full sm:flex-row flex-col gap-y-5">
         <img
           src="./profile.jpeg"
           alt="profile photo"
           className="min-w-48 max-h-48 object-cover rounded-xl ring-2 ring-offset-4 ring-[#075400]/80 ring-offset-black "
         />
-        <div className="flex flex-col gap-y-4 w-full">
-          <div className="flex gap-y-1  w-full justify-between items-start">
+        <div className="flex flex-col sm:text-left text-center gap-y-4 w-full">
+          <div className="flex gap-y-1  w-full justify-between items-start sm:flex-row flex-col ">
             <div className="flex flex-col">
               <h1 className="text-4xl font-black">Muhammed Berkan Özmen</h1>
               <p className="font-medium text-zinc-400">
                 jr. front-end developer / react developer
               </p>
             </div>
-            <div className="flex gap-x-5 ">
+            <div className="flex gap-x-5 sm:flex-row flex-col sm:w-auto w-full">
               {navTabs.map((tab) => (
                 <Link
                   key={tab.id}

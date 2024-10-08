@@ -14,7 +14,7 @@ const Project = ({ project }) => {
 
   return (
     <div className="w-full rounded-md bg-black border border-zinc-800  p-5 relative flex flex-col gap-y-4 hover:shadow-lg transition-shadow duration-300 ease-in-out">
-      <div className="flex justify-between items-center z-0">
+      <div className="flex sm:justify-between items-center  justify-center sm:flex-row flex-col gap-y-2 ">
         <h1 className="uppercase font-semibold text-white">{title}</h1>
         <div className="flex gap-x-3">
           <Link
