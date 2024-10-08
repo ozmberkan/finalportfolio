@@ -15,3 +15,16 @@ export const navTabs = [
   { id: 2, label: "Hakkımda", to: "/about" },
   { id: 3, label: "Projelerim", to: "/projects" },
 ];
+
+export const adminTable = [
+  { id: 1, label: "Başlık", key: "title" },
+  { id: 2, label: "Açıklama", key: "description" },
+  { id: 3, label: "Canlı Link", key: "link" },
+  { id: 4, label: "Resim", key: "image" },
+  { id: 5, label: "Github Link", key: "githubLink" },
+  { id: 6, label: "Versiyon", key: "version" },
+  { id: 7, label: "Duyarlılık", key: "responsive" },
+  { id: 8, label: "Teknoloji", key: "technology" },
+  { id: 9, label: "Stil Teknolojisi", key: "styleTech" },
+  { id: 10, label: "Aksiyon", key: "action" },
+];
