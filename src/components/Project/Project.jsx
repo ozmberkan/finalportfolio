@@ -51,7 +51,7 @@ const Project = ({ project }) => {
         </span>
         {responsive && (
           <span className="bg-green-600 text-white px-2 py-1 rounded-md text-xs">
-            Responsive
+            Duyarlı
           </span>
         )}
         {styleTech && (
