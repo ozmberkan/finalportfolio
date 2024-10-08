@@ -1,7 +1,15 @@
-import React from "react";
+import Layout from "~/layouts/Layout";
+import About from "~/pages/About/About";
+import Home from "~/pages/Home/Home";
+import Projects from "~/pages/Projects/Projects";
+import Resume from "~/pages/Resume/Resume";
 
-const Admin = () => {
-  return <div>Admin</div>;
+const AuthRoutes = () => {
+  return {
+    path: "/",
+    element: <Layout/>,
+    
+  };
 };
 
-export default Admin;
+export default AuthRoutes;

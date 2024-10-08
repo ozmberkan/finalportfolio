@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className=" w-full flex flex-grow flex-col gap-y-12 p-12">
       <div className="w-full flex flex-col gap-y-7 ">
-        <h1 className="text-5xl font-semibold  text-zinc-300">
+        <h1 className="text-5xl font-semibold  text-zinc-300 animate-pulse">
           Merhaba, kişisel portfolyo günceme hoş geldin. projelerimi
           inceleyebilir. İletişime geçebilirsin.
         </h1>
